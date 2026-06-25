@@ -1,1 +1,3010 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pondok Pesantren Nurul Hikmah — Mencetak Generasi Qurani</title>
+    <meta name="description" content="Pondok Pesantren Nurul Hikmah adalah lembaga pendidikan Islam terpadu yang mencetak generasi Qurani berakhlak mulia, berilmu, dan berprestasi.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --green: #1B4332;
+            --green-light: #2D5F47;
+            --green-dark: #0F281D;
+            --green-soft: #52796F;
+            --gold: #C9A961;
+            --gold-light: #E0C888;
+            --gold-dark: #9E7F3F;
+            --cream: #F5F1E8;
+            --cream-dark: #E8DDBB;
+            --warm-white: #FAF8F3;
+            --sand: #EDE5D0;
+            --black: #1A1A1A;
+            --gray-100: #F7F5F0;
+            --gray-300: #D6D0C0;
+            --gray-500: #8B8577;
+            --gray-700: #4A4539;
 
+            --shadow-sm: 0 2px 8px rgba(27,67,50,0.08);
+            --shadow-md: 0 10px 30px rgba(27,67,50,0.1);
+            --shadow-lg: 0 20px 50px rgba(27,67,50,0.15);
+            --shadow-xl: 0 30px 80px rgba(27,67,50,0.2);
+            --shadow-gold: 0 10px 40px rgba(201,169,97,0.25);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--warm-white);
+            color: var(--gray-700);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .serif { font-family: 'Playfair Display', serif; }
+        .arabic { font-family: 'Amiri', serif; direction: rtl; }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* ===== TOP BAR ===== */
+        .nh-topbar {
+            background: var(--green-dark);
+            color: rgba(245,241,232,0.9);
+            padding: 10px 0;
+            font-size: 12.5px;
+            border-bottom: 1px solid rgba(201,169,97,0.2);
+        }
+
+        .nh-topbar-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nh-topbar-left { display: flex; gap: 24px; }
+        .nh-topbar-left span { display: flex; align-items: center; gap: 7px; }
+        .nh-topbar-left i { color: var(--gold); font-size: 11px; }
+
+        .nh-topbar-right { display: flex; gap: 12px; align-items: center; }
+
+        .nh-topbar-right a {
+            color: rgba(245,241,232,0.7);
+            text-decoration: none;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            font-size: 12px;
+            border: 1px solid rgba(245,241,232,0.15);
+        }
+
+        .nh-topbar-right a:hover { background: var(--gold); color: var(--green-dark); border-color: var(--gold); }
+
+        .nh-bismillah {
+            font-family: 'Amiri', serif;
+            font-size: 14px;
+            color: var(--gold);
+            margin-right: 12px;
+        }
+
+        /* ===== NAVBAR ===== */
+        .nh-navbar {
+            background: var(--warm-white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s;
+            border-bottom: 1px solid rgba(27,67,50,0.08);
+        }
+
+        .nh-navbar.scrolled {
+            background: rgba(250,248,243,0.97);
+            backdrop-filter: blur(20px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .nh-navbar-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 90px;
+        }
+
+        .nh-logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+
+        .nh-logo-mark {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: var(--green);
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            position: relative;
+            box-shadow: var(--shadow-md);
+        }
+
+        .nh-logo-mark::before {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        .nh-logo-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--green);
+            line-height: 1.1;
+            letter-spacing: 0.5px;
+        }
+
+        .nh-logo-text p {
+            font-size: 10px;
+            color: var(--gold-dark);
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-top: 3px;
+            font-weight: 600;
+        }
+
+        .nh-nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nh-nav-links a {
+            text-decoration: none;
+            color: var(--gray-700);
+            font-size: 13.5px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            position: relative;
+            padding: 8px 0;
+            transition: color 0.3s;
+        }
+
+        .nh-nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: all 0.3s;
+            transform: translateX(-50%);
+        }
+
+        .nh-nav-links a:hover { color: var(--green); }
+        .nh-nav-links a:hover::after { width: 100%; }
+
+        .nh-nav-cta { display: flex; gap: 10px; align-items: center; }
+
+        .nh-btn {
+            padding: 12px 26px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            font-family: inherit;
+        }
+
+        .nh-btn-primary {
+            background: var(--green);
+            color: var(--gold);
+        }
+
+        .nh-btn-primary:hover {
+            background: var(--green-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nh-btn-gold {
+            background: var(--gold);
+            color: var(--green-dark);
+        }
+
+        .nh-btn-gold:hover {
+            background: var(--gold-dark);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .nh-btn-outline {
+            background: transparent;
+            color: var(--green);
+            border: 1.5px solid var(--green);
+        }
+
+        .nh-btn-outline:hover {
+            background: var(--green);
+            color: var(--gold);
+        }
+
+        .nh-btn-ghost {
+            background: transparent;
+            color: white;
+            border: 1.5px solid rgba(255,255,255,0.4);
+        }
+
+        .nh-btn-ghost:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            background: rgba(201,169,97,0.1);
+        }
+
+        .nh-menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--green);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* ===== HERO ===== */
+        .nh-hero {
+            position: relative;
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            color: white;
+            background: var(--green-dark);
+        }
+
+        .nh-hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(135deg, rgba(15,40,29,0.88) 0%, rgba(27,67,50,0.78) 100%),
+                url('https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&w=1920&q=80') center/cover;
+        }
+
+        .nh-hero-pattern {
+            position: absolute;
+            inset: 0;
+            opacity: 0.08;
+            background-image:
+                repeating-linear-gradient(45deg, transparent, transparent 40px, var(--gold) 40px, var(--gold) 41px),
+                repeating-linear-gradient(-45deg, transparent, transparent 40px, var(--gold) 40px, var(--gold) 41px);
+            pointer-events: none;
+        }
+
+        .nh-hero-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 100px 40px 80px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 70px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .nh-hero-bismillah {
+            font-family: 'Amiri', serif;
+            font-size: 32px;
+            color: var(--gold);
+            margin-bottom: 18px;
+            direction: rtl;
+            text-align: right;
+            max-width: 400px;
+        }
+
+        .nh-hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 18px;
+            background: rgba(201,169,97,0.15);
+            border: 1px solid rgba(201,169,97,0.35);
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 24px;
+        }
+
+        .nh-hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 5.5vw, 72px);
+            font-weight: 500;
+            line-height: 1.05;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .nh-hero-title em {
+            font-style: italic;
+            color: var(--gold);
+            font-weight: 400;
+        }
+
+        .nh-hero-desc {
+            font-size: 17px;
+            color: rgba(245,241,232,0.85);
+            margin-bottom: 38px;
+            max-width: 540px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .nh-hero-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .nh-hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(245,241,232,0.15);
+            max-width: 540px;
+        }
+
+        .nh-hero-stat .value {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .nh-hero-stat .value sup { font-size: 18px; margin-left: 2px; }
+
+        .nh-hero-stat .label {
+            font-size: 11px;
+            color: rgba(245,241,232,0.7);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        /* Hero Visual */
+        .nh-hero-visual {
+            position: relative;
+            height: 600px;
+        }
+
+        .nh-hero-img-main {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 85%;
+            height: 460px;
+            border-radius: 20px;
+            background: url('https://images.unsplash.com/photo-1585036156261-1c1e53243eb9?auto=format&fit=crop&w=900&q=80') center/cover;
+            box-shadow: var(--shadow-xl);
+            border: 6px solid rgba(201,169,97,0.3);
+        }
+
+        .nh-hero-img-float {
+            position: absolute;
+            bottom: 20px;
+            right: 0;
+            width: 60%;
+            height: 280px;
+            border-radius: 20px;
+            background: url('https://images.unsplash.com/photo-1609599006353-e6721ea96f00?auto=format&fit=crop&w=800&q=80') center/cover;
+            box-shadow: var(--shadow-xl);
+            border: 8px solid var(--green-dark);
+        }
+
+        .nh-hero-ayah {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            background: var(--gold);
+            color: var(--green-dark);
+            padding: 22px 26px;
+            border-radius: 14px;
+            max-width: 260px;
+            box-shadow: var(--shadow-xl);
+            animation: floatBadge 5s ease-in-out infinite;
+        }
+
+        @keyframes floatBadge {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .nh-hero-ayah .arab {
+            font-family: 'Amiri', serif;
+            font-size: 22px;
+            direction: rtl;
+            text-align: right;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            color: var(--green-dark);
+        }
+
+        .nh-hero-ayah .translate {
+            font-size: 12px;
+            font-style: italic;
+            color: var(--green);
+            line-height: 1.5;
+            border-top: 1px solid rgba(27,67,50,0.2);
+            padding-top: 10px;
+        }
+
+        .nh-hero-ayah .source {
+            font-size: 10.5px;
+            color: var(--green-dark);
+            font-weight: 700;
+            margin-top: 6px;
+            letter-spacing: 1px;
+        }
+
+        /* ===== SECTION COMMON ===== */
+        .nh-section {
+            padding: 110px 0;
+            position: relative;
+        }
+
+        .nh-section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            margin-bottom: 18px;
+        }
+
+        .nh-section-tag::before {
+            content: '';
+            width: 36px;
+            height: 2px;
+            background: var(--gold);
+        }
+
+        .nh-section-tag.center { justify-content: center; }
+        .nh-section-tag.center::before,
+        .nh-section-tag.center::after {
+            content: '';
+            width: 36px;
+            height: 2px;
+            background: var(--gold);
+        }
+
+        .nh-section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 4.5vw, 52px);
+            font-weight: 500;
+            color: var(--green);
+            line-height: 1.15;
+            margin-bottom: 22px;
+            letter-spacing: -0.5px;
+        }
+
+        .nh-section-title em {
+            font-style: italic;
+            color: var(--gold-dark);
+            font-weight: 400;
+        }
+
+        .nh-section-desc {
+            font-size: 16px;
+            color: var(--gray-500);
+            max-width: 640px;
+            line-height: 1.85;
+        }
+
+        /* ===== ABOUT ===== */
+        .nh-about { background: var(--warm-white); }
+
+        .nh-about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .nh-about-visual {
+            position: relative;
+            height: 640px;
+        }
+
+        .nh-about-img {
+            position: absolute;
+            border-radius: 18px;
+            background-size: cover;
+            background-position: center;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .nh-about-img-1 {
+            top: 0;
+            left: 0;
+            width: 72%;
+            height: 65%;
+            background-image: url('https://images.unsplash.com/photo-1564769625392-651b2c0c85b4?auto=format&fit=crop&w=900&q=80');
+            border: 6px solid var(--warm-white);
+        }
+
+        .nh-about-img-2 {
+            bottom: 0;
+            right: 0;
+            width: 65%;
+            height: 50%;
+            background-image: url('https://images.unsplash.com/photo-1591825729269-caeb344f6df2?auto=format&fit=crop&w=800&q=80');
+        }
+
+        .nh-about-badge {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--green);
+            color: var(--gold);
+            padding: 22px 30px;
+            border-radius: 14px;
+            text-align: center;
+            box-shadow: var(--shadow-xl);
+            border: 3px solid var(--gold);
+            z-index: 2;
+        }
+
+        .nh-about-badge .num {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .nh-about-badge .lbl {
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-top: 6px;
+            color: var(--gold-light);
+            font-weight: 600;
+        }
+
+        .nh-about-content .nh-section-desc {
+            margin-bottom: 24px;
+        }
+
+        .nh-about-values {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-top: 30px;
+        }
+
+        .nh-about-value {
+            padding: 22px;
+            background: var(--cream);
+            border-radius: 14px;
+            border: 1px solid var(--gray-300);
+            transition: all 0.3s;
+        }
+
+        .nh-about-value:hover {
+            border-color: var(--gold);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .nh-about-value .icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: var(--green);
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 14px;
+        }
+
+        .nh-about-value h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--green);
+            margin-bottom: 6px;
+        }
+
+        .nh-about-value p {
+            font-size: 13px;
+            color: var(--gray-500);
+            line-height: 1.6;
+        }
+
+        /* ===== STATS ===== */
+        .nh-stats {
+            background: var(--green);
+            padding: 70px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nh-stats::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 10% 30%, rgba(201,169,97,0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 70%, rgba(201,169,97,0.1) 0%, transparent 40%);
+        }
+
+        .nh-stats-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .nh-stat-item {
+            text-align: center;
+            color: white;
+            padding: 28px 16px;
+            border-right: 1px solid rgba(201,169,97,0.15);
+        }
+
+        .nh-stat-item:last-child { border-right: none; }
+
+        .nh-stat-icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 18px;
+            border-radius: 50%;
+            background: rgba(201,169,97,0.15);
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            border: 1px solid rgba(201,169,97,0.3);
+        }
+
+        .nh-stat-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 46px;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .nh-stat-value sup { font-size: 22px; margin-left: 3px; }
+
+        .nh-stat-label {
+            font-size: 12px;
+            color: rgba(245,241,232,0.8);
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        /* ===== PROGRAMS ===== */
+        .nh-programs { background: var(--cream); }
+
+        .nh-programs-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .nh-programs-header .nh-section-desc { margin: 0 auto; }
+
+        .nh-programs-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .nh-program-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: all 0.4s;
+            border: 1px solid var(--gray-300);
+            cursor: pointer;
+        }
+
+        .nh-program-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--gold);
+        }
+
+        .nh-program-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .nh-program-card:nth-child(1) .nh-program-img {
+            background-image: url('https://images.unsplash.com/photo-1609599006353-e6721ea96f00?auto=format&fit=crop&w=600&q=80');
+        }
+        .nh-program-card:nth-child(2) .nh-program-img {
+            background-image: url('https://images.unsplash.com/photo-1585036156261-1c1e53243eb9?auto=format&fit=crop&w=600&q=80');
+        }
+        .nh-program-card:nth-child(3) .nh-program-img {
+            background-image: url('https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=600&q=80');
+        }
+        .nh-program-card:nth-child(4) .nh-program-img {
+            background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80');
+        }
+
+        .nh-program-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(15,40,29,0.7) 100%);
+        }
+
+        .nh-program-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            background: var(--gold);
+            color: var(--green-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            z-index: 2;
+            box-shadow: var(--shadow-md);
+        }
+
+        .nh-program-body {
+            padding: 26px;
+        }
+
+        .nh-program-body .arab {
+            font-family: 'Amiri', serif;
+            color: var(--gold-dark);
+            font-size: 14px;
+            margin-bottom: 8px;
+            direction: rtl;
+            text-align: right;
+        }
+
+        .nh-program-body h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--green);
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .nh-program-body p {
+            font-size: 13.5px;
+            color: var(--gray-500);
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .nh-program-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 18px;
+        }
+
+        .nh-program-features span {
+            font-size: 10.5px;
+            padding: 4px 10px;
+            background: var(--cream);
+            color: var(--green);
+            border-radius: 20px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .nh-program-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--green);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: gap 0.3s;
+        }
+
+        .nh-program-link:hover { gap: 14px; color: var(--gold-dark); }
+
+        /* ===== FACILITIES ===== */
+        .nh-facilities { background: var(--warm-white); }
+
+        .nh-facilities-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .nh-facilities-header .nh-section-desc { margin: 0 auto; }
+
+        .nh-facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 260px 260px;
+            gap: 18px;
+        }
+
+        .nh-facility {
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            background-size: cover;
+            background-position: center;
+            transition: all 0.4s;
+        }
+
+        .nh-facility::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 30%, rgba(15,40,29,0.85) 100%);
+            transition: opacity 0.3s;
+        }
+
+        .nh-facility:hover { transform: scale(1.02); }
+
+        .nh-facility.large { grid-column: span 2; grid-row: span 2; }
+
+        .nh-facility:nth-child(1) { background-image: url('https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&w=1200&q=80'); }
+        .nh-facility:nth-child(2) { background-image: url('https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&w=600&q=80'); }
+        .nh-facility:nth-child(3) { background-image: url('https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=600&q=80'); }
+        .nh-facility:nth-child(4) { background-image: url('https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=600&q=80'); }
+        .nh-facility:nth-child(5) { background-image: url('https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=600&q=80'); }
+        .nh-facility:nth-child(6) { background-image: url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80'); }
+        .nh-facility:nth-child(7) { background-image: url('https://images.unsplash.com/photo-1544585265-1272c6e93db9?auto=format&fit=crop&w=600&q=80'); }
+
+        .nh-facility-info {
+            position: absolute;
+            bottom: 20px;
+            left: 24px;
+            right: 24px;
+            color: white;
+            z-index: 2;
+        }
+
+        .nh-facility-info .icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--gold);
+            color: var(--green-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .nh-facility-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .nh-facility.large .nh-facility-info h3 { font-size: 28px; }
+
+        .nh-facility-info p {
+            font-size: 12.5px;
+            color: rgba(255,255,255,0.85);
+        }
+
+        /* ===== ACTIVITIES ===== */
+        .nh-activities { background: var(--cream); }
+
+        .nh-activities-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .nh-activities-header .nh-section-desc { margin: 0 auto; }
+
+        .nh-activities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .nh-activity {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: all 0.3s;
+            border: 1px solid var(--gray-300);
+        }
+
+        .nh-activity:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--gold);
+        }
+
+        .nh-activity-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .nh-activity:nth-child(1) .nh-activity-img { background-image: url('https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&w=800&q=80'); }
+        .nh-activity:nth-child(2) .nh-activity-img { background-image: url('https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80'); }
+        .nh-activity:nth-child(3) .nh-activity-img { background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80'); }
+        .nh-activity:nth-child(4) .nh-activity-img { background-image: url('https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=800&q=80'); }
+        .nh-activity:nth-child(5) .nh-activity-img { background-image: url('https://images.unsplash.com/photo-1526976668912-1a811878dd37?auto=format&fit=crop&w=800&q=80'); }
+        .nh-activity:nth-child(6) .nh-activity-img { background-image: url('https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80'); }
+
+        .nh-activity-time {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: var(--gold);
+            color: var(--green-dark);
+            padding: 6px 12px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 700;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nh-activity-body {
+            padding: 24px;
+        }
+
+        .nh-activity-body h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--green);
+            margin-bottom: 8px;
+        }
+
+        .nh-activity-body p {
+            font-size: 13.5px;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        /* ===== USTADZ ===== */
+        .nh-ustadz { background: var(--warm-white); }
+
+        .nh-ustadz-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .nh-ustadz-header .nh-section-desc { margin: 0 auto; }
+
+        .nh-ustadz-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .nh-ustadz-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--gray-300);
+            transition: all 0.4s;
+        }
+
+        .nh-ustadz-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--gold);
+        }
+
+        .nh-ustadz-img {
+            height: 300px;
+            background-size: cover;
+            background-position: center top;
+            position: relative;
+        }
+
+        .nh-ustadz-card:nth-child(1) .nh-ustadz-img { background-image: url('https://images.unsplash.com/photo-1566753323558-f4e0952af115?auto=format&fit=crop&w=600&q=80'); }
+        .nh-ustadz-card:nth-child(2) .nh-ustadz-img { background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80'); }
+        .nh-ustadz-card:nth-child(3) .nh-ustadz-img { background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80'); }
+        .nh-ustadz-card:nth-child(4) .nh-ustadz-img { background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80'); }
+
+        .nh-ustadz-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 60%, rgba(15,40,29,0.5) 100%);
+        }
+
+        .nh-ustadz-body {
+            padding: 22px;
+            text-align: center;
+        }
+
+        .nh-ustadz-body h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 19px;
+            font-weight: 700;
+            color: var(--green);
+            margin-bottom: 4px;
+        }
+
+        .nh-ustadz-body .role {
+            font-size: 12px;
+            color: var(--gold-dark);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .nh-ustadz-body p {
+            font-size: 12.5px;
+            color: var(--gray-500);
+            line-height: 1.6;
+        }
+
+        .nh-ustadz-body .arab {
+            font-family: 'Amiri', serif;
+            color: var(--gold-dark);
+            font-size: 16px;
+            margin-top: 10px;
+            direction: rtl;
+        }
+
+        /* ===== PPDB / ADMISSION ===== */
+        .nh-ppdb {
+            background: linear-gradient(135deg, rgba(15,40,29,0.92) 0%, rgba(27,67,50,0.95) 100%),
+                        url('https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&w=1600&q=80') center/cover;
+            color: var(--cream);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nh-ppdb::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(201,169,97,0.04) 60px, rgba(201,169,97,0.04) 61px);
+            pointer-events: none;
+        }
+
+        .nh-ppdb-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .nh-ppdb-info .nh-section-tag { color: var(--gold); }
+        .nh-ppdb-info .nh-section-tag::before { background: var(--gold); }
+        .nh-ppdb-info .nh-section-title { color: white; }
+        .nh-ppdb-info .nh-section-title em { color: var(--gold); }
+        .nh-ppdb-info .nh-section-desc { color: rgba(245,241,232,0.8); margin-bottom: 30px; }
+
+        .nh-ppdb-features {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .nh-ppdb-feature {
+            display: flex;
+            gap: 16px;
+            padding: 18px;
+            background: rgba(201,169,97,0.08);
+            border: 1px solid rgba(201,169,97,0.2);
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .nh-ppdb-feature:hover {
+            background: rgba(201,169,97,0.12);
+            border-color: var(--gold);
+        }
+
+        .nh-ppdb-feature .icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            background: var(--gold);
+            color: var(--green-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .nh-ppdb-feature h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            color: var(--gold);
+            margin-bottom: 4px;
+        }
+
+        .nh-ppdb-feature p {
+            font-size: 13px;
+            color: rgba(245,241,232,0.7);
+            line-height: 1.6;
+        }
+
+        .nh-ppdb-form {
+            background: rgba(250,248,243,0.04);
+            border: 1px solid rgba(201,169,97,0.25);
+            border-radius: 20px;
+            padding: 36px;
+            backdrop-filter: blur(15px);
+        }
+
+        .nh-ppdb-form h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            color: var(--gold);
+            margin-bottom: 6px;
+        }
+
+        .nh-ppdb-form > p {
+            font-size: 13.5px;
+            color: rgba(245,241,232,0.7);
+            margin-bottom: 24px;
+        }
+
+        .nh-form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .nh-form-field { margin-bottom: 12px; }
+
+        .nh-form-field label {
+            display: block;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .nh-form-field input,
+        .nh-form-field select,
+        .nh-form-field textarea {
+            width: 100%;
+            padding: 12px 14px;
+            background: rgba(245,241,232,0.05);
+            border: 1.5px solid rgba(201,169,97,0.3);
+            border-radius: 10px;
+            color: var(--cream);
+            font-size: 13.5px;
+            font-family: inherit;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .nh-form-field input::placeholder,
+        .nh-form-field textarea::placeholder { color: rgba(245,241,232,0.4); }
+
+        .nh-form-field input:focus,
+        .nh-form-field select:focus,
+        .nh-form-field textarea:focus {
+            border-color: var(--gold);
+            background: rgba(201,169,97,0.08);
+        }
+
+        .nh-form-field select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23C9A961' stroke-width='1.5'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+        }
+
+        .nh-form-field select option { background: var(--green-dark); color: var(--cream); }
+        .nh-form-field textarea { resize: vertical; min-height: 80px; }
+
+        .nh-ppdb-form .nh-btn {
+            width: 100%;
+            justify-content: center;
+            padding: 14px;
+            margin-top: 6px;
+        }
+
+        /* ===== NEWS ===== */
+        .nh-news { background: var(--cream); }
+
+        .nh-news-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 50px;
+        }
+
+        .nh-news-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr 1fr;
+            gap: 24px;
+        }
+
+        .nh-news-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--gray-300);
+            transition: all 0.4s;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .nh-news-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--gold);
+        }
+
+        .nh-news-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .nh-news-card.featured .nh-news-img { height: 340px; }
+
+        .nh-news-card:nth-child(1) .nh-news-img { background-image: url('https://images.unsplash.com/photo-1591825729269-caeb344f6df2?auto=format&fit=crop&w=900&q=80'); }
+        .nh-news-card:nth-child(2) .nh-news-img { background-image: url('https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=700&q=80'); }
+        .nh-news-card:nth-child(3) .nh-news-img { background-image: url('https://images.unsplash.com/photo-1585036156261-1c1e53243eb9?auto=format&fit=crop&w=700&q=80'); }
+
+        .nh-news-category {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: var(--gold);
+            color: var(--green-dark);
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 10.5px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            z-index: 2;
+        }
+
+        .nh-news-body {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nh-news-meta {
+            display: flex;
+            gap: 14px;
+            font-size: 12px;
+            color: var(--gray-500);
+            margin-bottom: 12px;
+        }
+
+        .nh-news-meta i { color: var(--gold-dark); margin-right: 4px; }
+
+        .nh-news-body h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 19px;
+            font-weight: 700;
+            color: var(--green);
+            margin-bottom: 10px;
+            line-height: 1.35;
+        }
+
+        .nh-news-card.featured h3 { font-size: 24px; }
+
+        .nh-news-body p {
+            font-size: 13.5px;
+            color: var(--gray-500);
+            line-height: 1.7;
+            margin-bottom: 16px;
+            flex: 1;
+        }
+
+        .nh-news-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--green);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: gap 0.3s;
+        }
+
+        .nh-news-link:hover { gap: 14px; color: var(--gold-dark); }
+
+        /* ===== TESTIMONIALS ===== */
+        .nh-testimonials { background: var(--warm-white); }
+
+        .nh-testimonials-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .nh-testimonials-header .nh-section-desc { margin: 0 auto; }
+
+        .nh-testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .nh-testimonial {
+            background: var(--cream);
+            border-radius: 18px;
+            padding: 32px;
+            border: 1px solid var(--gray-300);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nh-testimonial:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nh-testimonial .quote-mark {
+            font-family: 'Playfair Display', serif;
+            font-size: 70px;
+            color: var(--gold);
+            line-height: 0.5;
+            margin-bottom: 16px;
+            opacity: 0.4;
+        }
+
+        .nh-testimonial .stars {
+            color: var(--gold);
+            font-size: 14px;
+            margin-bottom: 14px;
+        }
+
+        .nh-testimonial .text {
+            font-size: 14.5px;
+            color: var(--gray-700);
+            line-height: 1.75;
+            margin-bottom: 22px;
+            font-style: italic;
+        }
+
+        .nh-testimonial-foot {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding-top: 18px;
+            border-top: 1px solid var(--gray-300);
+        }
+
+        .nh-testimonial-avatar {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            border: 2px solid var(--gold);
+        }
+
+        .nh-testimonial:nth-child(1) .nh-testimonial-avatar { background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'); }
+        .nh-testimonial:nth-child(2) .nh-testimonial-avatar { background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80'); }
+        .nh-testimonial:nth-child(3) .nh-testimonial-avatar { background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80'); }
+
+        .nh-testimonial-foot h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--green);
+            margin-bottom: 3px;
+        }
+
+        .nh-testimonial-foot p {
+            font-size: 12px;
+            color: var(--gray-500);
+        }
+
+        /* ===== CTA QURAN VERSE ===== */
+        .nh-ayah-section {
+            background: var(--green);
+            padding: 90px 0;
+            position: relative;
+            overflow: hidden;
+            color: white;
+            text-align: center;
+        }
+
+        .nh-ayah-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(201,169,97,0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(201,169,97,0.15) 0%, transparent 50%);
+        }
+
+        .nh-ayah-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .nh-ayah-arab {
+            font-family: 'Amiri', serif;
+            font-size: 42px;
+            color: var(--gold);
+            direction: rtl;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .nh-ayah-translation {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 22px;
+            color: var(--cream);
+            line-height: 1.5;
+            margin-bottom: 18px;
+        }
+
+        .nh-ayah-source {
+            font-size: 13px;
+            color: var(--gold);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        /* ===== CONTACT ===== */
+        .nh-contact { background: var(--warm-white); }
+
+        .nh-contact-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .nh-contact-map {
+            border-radius: 20px;
+            overflow: hidden;
+            height: 500px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--gray-300);
+        }
+
+        .nh-contact-map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .nh-contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .nh-contact-card {
+            background: var(--cream);
+            padding: 24px;
+            border-radius: 14px;
+            border: 1px solid var(--gray-300);
+            transition: all 0.3s;
+            display: flex;
+            gap: 16px;
+        }
+
+        .nh-contact-card:hover {
+            border-color: var(--gold);
+            transform: translateX(5px);
+        }
+
+        .nh-contact-card .icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            background: var(--green);
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .nh-contact-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--green);
+            margin-bottom: 6px;
+        }
+
+        .nh-contact-card p {
+            font-size: 13.5px;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        .nh-contact-card a {
+            color: var(--green);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .nh-contact-card a:hover { color: var(--gold-dark); }
+
+        /* ===== NEWSLETTER ===== */
+        .nh-newsletter {
+            background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nh-newsletter::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(201,169,97,0.05) 60px, rgba(201,169,97,0.05) 61px);
+        }
+
+        .nh-newsletter-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .nh-newsletter h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 500;
+            margin-bottom: 16px;
+            line-height: 1.25;
+            color: white;
+        }
+
+        .nh-newsletter h2 em {
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        .nh-newsletter p {
+            font-size: 15px;
+            color: rgba(245,241,232,0.85);
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .nh-newsletter-form {
+            display: flex;
+            max-width: 520px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 50px;
+            padding: 6px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nh-newsletter-form input {
+            flex: 1;
+            padding: 14px 22px;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            color: var(--green-dark);
+            font-family: inherit;
+        }
+
+        .nh-newsletter-form button {
+            padding: 14px 28px;
+            background: var(--gold);
+            color: var(--green-dark);
+            border: none;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .nh-newsletter-form button:hover { background: var(--gold-dark); color: white; }
+
+        /* ===== FOOTER ===== */
+        .nh-footer {
+            background: var(--green-dark);
+            color: rgba(245,241,232,0.75);
+            padding: 80px 0 0;
+        }
+
+        .nh-footer-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .nh-footer-brand .nh-logo-text h1 { color: var(--cream); }
+        .nh-footer-brand .nh-logo-text p { color: var(--gold); }
+
+        .nh-footer-brand > p {
+            font-size: 14px;
+            margin-top: 24px;
+            line-height: 1.8;
+            color: rgba(245,241,232,0.65);
+        }
+
+        .nh-footer-socials {
+            display: flex;
+            gap: 10px;
+            margin-top: 22px;
+        }
+
+        .nh-footer-social {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(245,241,232,0.05);
+            border: 1px solid rgba(245,241,232,0.15);
+            color: rgba(245,241,232,0.75);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .nh-footer-social:hover {
+            background: var(--gold);
+            color: var(--green-dark);
+            border-color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        .nh-footer-col h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--cream);
+            margin-bottom: 22px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .nh-footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--gold);
+        }
+
+        .nh-footer-col ul { list-style: none; }
+        .nh-footer-col ul li { margin-bottom: 12px; }
+
+        .nh-footer-col ul li a {
+            color: rgba(245,241,232,0.65);
+            text-decoration: none;
+            font-size: 13.5px;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nh-footer-col ul li a:hover {
+            color: var(--gold);
+            padding-left: 4px;
+        }
+
+        .nh-footer-col ul li a i {
+            font-size: 10px;
+            color: var(--gold);
+        }
+
+        .nh-footer-contact-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 13.5px;
+        }
+
+        .nh-footer-contact-item i {
+            color: var(--gold);
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .nh-footer-certif {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .nh-certif-badge {
+            padding: 6px 12px;
+            background: rgba(201,169,97,0.15);
+            border: 1px solid rgba(201,169,97,0.3);
+            border-radius: 6px;
+            font-size: 10.5px;
+            font-weight: 700;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nh-footer-bottom {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 22px 40px;
+            border-top: 1px solid rgba(245,241,232,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 12.5px;
+        }
+
+        .nh-footer-bottom p { color: rgba(245,241,232,0.5); }
+        .nh-footer-bottom a { color: var(--gold); text-decoration: none; }
+
+        .nh-footer-bottom-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nh-footer-bottom-links a {
+            color: rgba(245,241,232,0.5);
+            transition: color 0.3s;
+        }
+
+        .nh-footer-bottom-links a:hover { color: var(--gold); }
+
+        /* ===== FLOATING ===== */
+        .nh-wa-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #25D366;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(37,211,102,0.4);
+            transition: all 0.3s;
+            position: fixed;
+        }
+
+        .nh-wa-float:hover { transform: scale(1.1) translateY(-3px); }
+
+        .nh-back-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 999;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: var(--green);
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            text-decoration: none;
+            box-shadow: var(--shadow-md);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            border: 1.5px solid var(--gold);
+        }
+
+        .nh-back-top.visible { opacity: 1; visibility: visible; }
+        .nh-back-top:hover { background: var(--gold); color: var(--green-dark); }
+
+        /* ===== REVEAL ===== */
+        .nh-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nh-reveal.visible { opacity: 1; transform: translateY(0); }
+        .nh-reveal-delay-1 { transition-delay: 0.1s; }
+        .nh-reveal-delay-2 { transition-delay: 0.2s; }
+        .nh-reveal-delay-3 { transition-delay: 0.3s; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .nh-hero-content { grid-template-columns: 1fr; text-align: center; }
+            .nh-hero-bismillah { margin: 0 auto 18px; text-align: center; }
+            .nh-hero-desc { margin: 0 auto 38px; }
+            .nh-hero-actions { justify-content: center; }
+            .nh-hero-stats { margin: 0 auto; }
+            .nh-hero-visual { display: none; }
+            .nh-about-grid { grid-template-columns: 1fr; gap: 60px; }
+            .nh-about-visual { height: 500px; max-width: 500px; margin: 0 auto; }
+            .nh-programs-grid { grid-template-columns: repeat(2, 1fr); }
+            .nh-facilities-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
+            .nh-facility.large { grid-column: span 2; }
+            .nh-activities-grid { grid-template-columns: repeat(2, 1fr); }
+            .nh-ustadz-grid { grid-template-columns: repeat(2, 1fr); }
+            .nh-ppdb-grid { grid-template-columns: 1fr; gap: 40px; }
+            .nh-news-grid { grid-template-columns: 1fr; }
+            .nh-testimonials-grid { grid-template-columns: 1fr; }
+            .nh-contact-grid { grid-template-columns: 1fr; }
+            .nh-footer-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+            .nh-stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .nh-stat-item { border-right: none; border-bottom: 1px solid rgba(201,169,97,0.15); }
+        }
+
+        @media (max-width: 768px) {
+            .nh-topbar { display: none; }
+            .nh-nav-links { display: none; }
+            .nh-menu-toggle { display: block; }
+            .nh-section { padding: 80px 0; }
+            .nh-programs-grid { grid-template-columns: 1fr; }
+            .nh-facilities-grid { grid-template-columns: 1fr; }
+            .nh-facility.large { grid-column: span 1; }
+            .nh-activities-grid { grid-template-columns: 1fr; }
+            .nh-ustadz-grid { grid-template-columns: 1fr; }
+            .nh-form-row { grid-template-columns: 1fr; }
+            .nh-news-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+            .nh-footer-grid { grid-template-columns: 1fr; gap: 36px; }
+            .nh-footer-bottom { flex-direction: column; text-align: center; }
+            .nh-ayah-arab { font-size: 28px; }
+            .nh-ayah-translation { font-size: 18px; }
+            .nh-about-values { grid-template-columns: 1fr; }
+            .nh-stats-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        .nh-mobile-menu {
+            position: fixed;
+            top: 90px;
+            left: 0;
+            right: 0;
+            background: var(--warm-white);
+            box-shadow: var(--shadow-lg);
+            padding: 24px;
+            transform: translateY(-120%);
+            transition: transform 0.4s;
+            z-index: 999;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .nh-mobile-menu.active { transform: translateY(0); }
+        .nh-mobile-menu ul { list-style: none; }
+        .nh-mobile-menu ul li { padding: 14px 0; border-bottom: 1px solid var(--gray-300); }
+        .nh-mobile-menu ul li:last-child { border-bottom: none; }
+        .nh-mobile-menu ul li a {
+            text-decoration: none;
+            color: var(--green);
+            font-size: 15px;
+            font-weight: 600;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== TOP BAR ===== -->
+    <div class="nh-topbar">
+        <div class="nh-topbar-inner">
+            <div class="nh-topbar-left">
+                <span class="nh-bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</span>
+                <span><i class="fas fa-phone"></i> +62 271 123 456</span>
+                <span><i class="fas fa-envelope"></i> info@ppnh.sch.id</span>
+            </div>
+            <div class="nh-topbar-right">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://wa.me/6281234567890" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="nh-navbar" id="nhNavbar">
+        <div class="nh-navbar-inner">
+            <a href="#home" class="nh-logo">
+                <div class="nh-logo-mark"><i class="fas fa-mosque"></i></div>
+                <div class="nh-logo-text">
+                    <h1>Nurul Hikmah</h1>
+                    <p>Pondok Pesantren</p>
+                </div>
+            </a>
+
+            <ul class="nh-nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#programs">Program</a></li>
+                <li><a href="#facilities">Fasilitas</a></li>
+                <li><a href="#activities">Kegiatan</a></li>
+                <li><a href="#ustadz">Pengasuh</a></li>
+                <li><a href="#news">Berita</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+
+            <div class="nh-nav-cta">
+                <a href="#ppdb" class="nh-btn nh-btn-outline" style="padding: 10px 20px;">PPDB</a>
+                <a href="#ppdb" class="nh-btn nh-btn-gold">Daftar Sekarang <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <button class="nh-menu-toggle" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="nh-mobile-menu" id="nhMobileMenu">
+        <ul>
+            <li><a href="#home" onclick="toggleMobileMenu()">Beranda</a></li>
+            <li><a href="#about" onclick="toggleMobileMenu()">Tentang Kami</a></li>
+            <li><a href="#programs" onclick="toggleMobileMenu()">Program Pendidikan</a></li>
+            <li><a href="#facilities" onclick="toggleMobileMenu()">Fasilitas</a></li>
+            <li><a href="#activities" onclick="toggleMobileMenu()">Kegiatan Santri</a></li>
+            <li><a href="#ustadz" onclick="toggleMobileMenu()">Pengasuh & Ustadz</a></li>
+            <li><a href="#news" onclick="toggleMobileMenu()">Berita</a></li>
+            <li><a href="#contact" onclick="toggleMobileMenu()">Kontak</a></li>
+            <li><a href="#ppdb" onclick="toggleMobileMenu()" style="color: var(--gold-dark); font-weight: 700;">Daftar Santri Baru (PPDB)</a></li>
+        </ul>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section class="nh-hero" id="home">
+        <div class="nh-hero-bg"></div>
+        <div class="nh-hero-pattern"></div>
+        <div class="nh-hero-content">
+            <div class="nh-hero-text">
+                <div class="nh-hero-bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+                <div class="nh-hero-tag">
+                    <i class="fas fa-mosque"></i>
+                    Islamic Boarding School · Est. 1985
+                </div>
+                <h1 class="nh-hero-title">
+                    Mencetak Generasi<br>
+                    <em>Qurani</em> yang<br>
+                    Berakhlak Mulia
+                </h1>
+                <p class="nh-hero-desc">
+                    Pondok Pesantren Nurul Hikmah adalah lembaga pendidikan Islam terpadu yang memadukan kurikulum tahfidz Quran, ilmu diniyah, pendidikan formal, dan pembentukan karakter Islami dalam lingkungan pesantren yang kondusif.
+                </p>
+                <div class="nh-hero-actions">
+                    <a href="#ppdb" class="nh-btn nh-btn-gold" style="padding: 16px 32px;">
+                        <i class="fas fa-user-plus"></i> Daftar Santri Baru
+                    </a>
+                    <a href="#about" class="nh-btn nh-btn-ghost" style="padding: 16px 32px;">
+                        <i class="fas fa-play-circle"></i> Profil Pesantren
+                    </a>
+                </div>
+                <div class="nh-hero-stats">
+                    <div class="nh-hero-stat">
+                        <div class="value" data-count="40">0<sup>+</sup></div>
+                        <div class="label">Tahun Berdiri</div>
+                    </div>
+                    <div class="nh-hero-stat">
+                        <div class="value" data-count="1500">0<sup>+</sup></div>
+                        <div class="label">Santri Aktif</div>
+                    </div>
+                    <div class="nh-hero-stat">
+                        <div class="value" data-count="85">0<sup>+</sup></div>
+                        <div class="label">Ustadz/ah</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nh-hero-visual">
+                <div class="nh-hero-img-main"></div>
+                <div class="nh-hero-img-float"></div>
+                <div class="nh-hero-ayah">
+                    <div class="arab">يَرْفَعِ اللَّهُ الَّذِينَ آمَنُوا مِنكُمْ وَالَّذِينَ أُوتُوا الْعِلْمَ دَرَجَاتٍ</div>
+                    <div class="translate">"Allah akan meninggikan orang-orang yang beriman dan berilmu beberapa derajat."</div>
+                    <div class="source">— QS. Al-Mujadilah: 11</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="nh-section nh-about" id="about">
+        <div class="container">
+            <div class="nh-about-grid">
+                <div class="nh-about-visual nh-reveal">
+                    <div class="nh-about-img nh-about-img-1"></div>
+                    <div class="nh-about-img nh-about-img-2"></div>
+                    <div class="nh-about-badge">
+                        <div class="num">1985</div>
+                        <div class="lbl">Tahun Berdiri</div>
+                    </div>
+                </div>
+
+                <div class="nh-about-content nh-reveal">
+                    <div class="nh-section-tag">Tentang Kami</div>
+                    <h2 class="nh-section-title">
+                        Warisan <em>Ilmu</em>,<br>
+                        Cahaya untuk Umat
+                    </h2>
+                    <p class="nh-section-desc">
+                        Didirikan pada tahun 1985 oleh Almarhum <strong>KH. Abdullah Syafi'i</strong>, Pondok Pesantren Nurul Hikmah telah berkiprah lebih dari 40 tahun dalam mencetak generasi Qurani yang berakhlak mulia, berilmu luas, dan siap menjadi pemimpin umat.
+                    </p>
+                    <p class="nh-section-desc">
+                        Dengan mengusung konsep <em>"At-Tawazun bainal 'Ilmi wal 'Amal"</em> (keseimbangan antara ilmu dan amal), kami memadukan tradisi salaf yang kuat dengan pendidikan modern yang relevan dengan tantangan zaman.
+                    </p>
+
+                    <div class="nh-about-values">
+                        <div class="nh-about-value">
+                            <div class="icon"><i class="fas fa-book-quran"></i></div>
+                            <h4>Tafaqquh Fiddin</h4>
+                            <p>Mendalami ilmu agama sebagai fondasi kehidupan.</p>
+                        </div>
+                        <div class="nh-about-value">
+                            <div class="icon"><i class="fas fa-hands-praying"></i></div>
+                            <h4>Akhlakul Karimah</h4>
+                            <p>Membentuk karakter mulia sesuai tuntunan Rasulullah ﷺ.</p>
+                        </div>
+                        <div class="nh-about-value">
+                            <div class="icon"><i class="fas fa-graduation-cap"></i></div>
+                            <h4>Pendidikan Modern</h4>
+                            <p>Kurikulum terpadu formal, diniyah, dan lifeskill.</p>
+                        </div>
+                        <div class="nh-about-value">
+                            <div class="icon"><i class="fas fa-people-group"></i></div>
+                            <h4>Ukhuwah Islamiyah</h4>
+                            <p>Membangun persaudaraan dan kepedulian sosial.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <section class="nh-stats">
+        <div class="nh-stats-grid">
+            <div class="nh-stat-item nh-reveal">
+                <div class="nh-stat-icon"><i class="fas fa-book-quran"></i></div>
+                <div class="nh-stat-value" data-count="350">0<sup>+</sup></div>
+                <div class="nh-stat-label">Hafidz Quran</div>
+            </div>
+            <div class="nh-stat-item nh-reveal nh-reveal-delay-1">
+                <div class="nh-stat-icon"><i class="fas fa-user-graduate"></i></div>
+                <div class="nh-stat-value" data-count="12000">0<sup>+</sup></div>
+                <div class="nh-stat-label">Alumni</div>
+            </div>
+            <div class="nh-stat-item nh-reveal nh-reveal-delay-2">
+                <div class="nh-stat-icon"><i class="fas fa-trophy"></i></div>
+                <div class="nh-stat-value" data-count="150">0<sup>+</sup></div>
+                <div class="nh-stat-label">Penghargaan</div>
+            </div>
+            <div class="nh-stat-item nh-reveal nh-reveal-delay-3">
+                <div class="nh-stat-icon"><i class="fas fa-mosque"></i></div>
+                <div class="nh-stat-value" data-count="25">0</div>
+                <div class="nh-stat-label">Hektar Area</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROGRAMS ===== -->
+    <section class="nh-section nh-programs" id="programs">
+        <div class="container">
+            <div class="nh-programs-header nh-reveal">
+                <div class="nh-section-tag center">Program Pendidikan</div>
+                <h2 class="nh-section-title">Kurikulum <em>Terpadu</em><br>untuk Generasi Rabbani</h2>
+                <p class="nh-section-desc">
+                    Empat pilar pendidikan yang saling melengkapi: tahfidz Quran, ilmu diniyah, pendidikan formal, dan penguasaan bahasa asing.
+                </p>
+            </div>
+
+            <div class="nh-programs-grid">
+                <div class="nh-program-card nh-reveal">
+                    <div class="nh-program-img">
+                        <div class="nh-program-icon"><i class="fas fa-book-quran"></i></div>
+                    </div>
+                    <div class="nh-program-body">
+                        <div class="arab">تَحْفِيْظُ الْقُرْآنِ</div>
+                        <h3>Program Tahfidz</h3>
+                        <p>Program unggulan menghafal 30 juz Al-Quran dengan metode tikrar dan muraja'ah intensif bersama ustadz bersanad.</p>
+                        <div class="nh-program-features">
+                            <span>30 Juz</span>
+                            <span>Ustadz Bersanad</span>
+                            <span>Tahsin</span>
+                        </div>
+                        <a href="#ppdb" class="nh-program-link">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="nh-program-card nh-reveal nh-reveal-delay-1">
+                    <div class="nh-program-img">
+                        <div class="nh-program-icon"><i class="fas fa-mosque"></i></div>
+                    </div>
+                    <div class="nh-program-body">
+                        <div class="arab">الدِّرَاسَاتُ الإِسْلَامِيَّةُ</div>
+                        <h3>Diniyah Salafiyah</h3>
+                        <p>Pendalaman kitab kuning: fiqih, tauhid, hadis, tafsir, nahwu-shorof dengan metode bandongan dan sorogan.</p>
+                        <div class="nh-program-features">
+                            <span>Kitab Kuning</span>
+                            <span>Bandongan</span>
+                            <span>Sorogan</span>
+                        </div>
+                        <a href="#ppdb" class="nh-program-link">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="nh-program-card nh-reveal nh-reveal-delay-2">
+                    <div class="nh-program-img">
+                        <div class="nh-program-icon"><i class="fas fa-graduation-cap"></i></div>
+                    </div>
+                    <div class="nh-program-body">
+                        <div class="arab">التَّعْلِيْمُ الرَّسْمِيُّ</div>
+                        <h3>Pendidikan Formal</h3>
+                        <p>SMP & SMA terakreditasi A dengan kurikulum nasional plus. Lulusan diterima di PTN favorit dan universitas Timur Tengah.</p>
+                        <div class="nh-program-features">
+                            <span>Akreditasi A</span>
+                            <span>SMP & SMA</span>
+                            <span>STEM</span>
+                        </div>
+                        <a href="#ppdb" class="nh-program-link">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="nh-program-card nh-reveal nh-reveal-delay-3">
+                    <div class="nh-program-img">
+                        <div class="nh-program-icon"><i class="fas fa-language"></i></div>
+                    </div>
+                    <div class="nh-program-body">
+                        <div class="arab">تَعَلُّمُ اللُّغَاتِ</div>
+                        <h3>Bahasa Asing</h3>
+                        <p>Penguasaan Bahasa Arab dan Inggris aktif melalui program bilingual class, debate club, dan public speaking.</p>
+                        <div class="nh-program-features">
+                            <span>Arab Aktif</span>
+                            <span>English</span>
+                            <span>Debate</span>
+                        </div>
+                        <a href="#ppdb" class="nh-program-link">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== AYAH SECTION ===== -->
+    <section class="nh-ayah-section">
+        <div class="nh-ayah-inner nh-reveal">
+            <div class="nh-ayah-arab">اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ ۝ خَلَقَ الْإِنسَانَ مِنْ عَلَقٍ ۝ اقْرَأْ وَرَبُّكَ الْأَكْرَمُ ۝ الَّذِي عَلَّمَ بِالْقَلَمِ ۝ عَلَّمَ الْإِنسَانَ مَا لَمْ يَعْلَمْ</div>
+            <div class="nh-ayah-translation">"Bacalah dengan (menyebut) nama Tuhanmu yang menciptakan. Dia telah menciptakan manusia dari segumpal darah. Bacalah, dan Tuhanmulah Yang Maha Mulia. Yang mengajar (manusia) dengan pena. Dia mengajarkan manusia apa yang tidak diketahuinya."</div>
+            <div class="nh-ayah-source">— QS. Al-'Alaq: 1-5</div>
+        </div>
+    </section>
+
+    <!-- ===== FACILITIES ===== -->
+    <section class="nh-section nh-facilities" id="facilities">
+        <div class="container">
+            <div class="nh-facilities-header nh-reveal">
+                <div class="nh-section-tag center">Fasilitas</div>
+                <h2 class="nh-section-title">Fasilitas <em>Modern</em> yang<br>Mendukung Pembelajaran</h2>
+                <p class="nh-section-desc">
+                    Di atas lahan 25 hektar, kami menyediakan fasilitas lengkap untuk kenyamanan belajar dan ibadah santri.
+                </p>
+            </div>
+
+            <div class="nh-facilities-grid">
+                <div class="nh-facility large nh-reveal">
+                    <div class="nh-facility-info">
+                        <div class="icon"><i class="fas fa-mosque"></i></div>
+                        <h3>Masjid Jami' Nurul Hikmah</h3>
+                        <p>Kapasitas 3.000 jamaah, pusat ibadah & kajian</p>
+                    </div>
+                </div>
+
+                <div class="nh-facility nh-reveal nh-reveal-delay-1">
+                    <div class="nh-facility-info">
+                        <div class="icon"><i class="fas fa-book-open"></i></div>
+                        <h3>Perpustakaan Digital</h3>
+                        <p>50.000+ koleksi kitab & buku</p>
+                    </div>
+                </div>
+
+                <div class="nh-facility nh-reveal nh-reveal-delay-2">
+                    <div class="nh-facility-info">
+                        <div class="icon"><i class="fas fa-bed"></i></div>
+                        <h3>Asrama Santri</h3>
+                        <p>Nyaman, bersih, & terorganisir</p>
+                    </div>
+                </div>
+
+                <div class="nh-facility nh-reveal">
+                    <div class="nh-facility-info">
+                        <div class="icon"><i class="fas fa-flask"></i></div>
+                        <h3>Laboratorium</h3>
+                        <p>IPA, Komputer, Bahasa</p>
+                    </div>
+                </div>
+
+                <div class="nh-facility nh-reveal nh-reveal-delay-1">
+                    <div class="nh-facility-info">
+                        <div class="icon"><i class="fas fa-futbol"></i></div>
+                        <h3>Lapangan Olahraga</h3>
+                        <p>Sepak bola, basket, futsal</p>
+                    </div>
+                </div>
+
+                <div class="nh-facility nh-reveal nh-reveal-delay-2">
+                    <div class="nh-facility-info">
+                        <div class="icon"><i class="fas fa-utensils"></i></div>
+                        <h3>Dapur & Kantin</h3>
+                        <p>Higienis & halal</p>
+                    </div>
+                </div>
+
+                <div class="nh-facility nh-reveal nh-reveal-delay-3">
+                    <div class="nh-facility-info">
+                        <div class="icon"><i class="fas fa-stethoscope"></i></div>
+                        <h3>Klinik Kesehatan</h3>
+                        <p>Dokter & perawat 24 jam</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ACTIVITIES ===== -->
+    <section class="nh-section nh-activities" id="activities">
+        <div class="container">
+            <div class="nh-activities-header nh-reveal">
+                <div class="nh-section-tag center">Kegiatan Harian Santri</div>
+                <h2 class="nh-section-title">Aktivitas <em>Produktif</em> &<br>Penuh Berkah</h2>
+                <p class="nh-section-desc" style="margin: 0 auto;">
+                    Jadwal kegiatan terstruktur dari subuh hingga malam, memadukan ibadah, belajar, dan pengembangan diri.
+                </p>
+            </div>
+
+            <div class="nh-activities-grid">
+                <div class="nh-activity nh-reveal">
+                    <div class="nh-activity-img">
+                        <span class="nh-activity-time"><i class="fas fa-clock"></i> 03:30 - 05:00</span>
+                    </div>
+                    <div class="nh-activity-body">
+                        <h3>Qiyamul Lail & Tahajud</h3>
+                        <p>Sholat tahajud berjamaah, wirid, dan tilawah Al-Quran di keheningan sepertiga malam terakhir.</p>
+                    </div>
+                </div>
+
+                <div class="nh-activity nh-reveal nh-reveal-delay-1">
+                    <div class="nh-activity-img">
+                        <span class="nh-activity-time"><i class="fas fa-clock"></i> 05:00 - 07:00</span>
+                    </div>
+                    <div class="nh-activity-body">
+                        <h3>Sholat Subuh & Tahfidz</h3>
+                        <p>Sholat subuh berjamaah dilanjutkan setoran hafalan Quran bersama ustadz pembimbing.</p>
+                    </div>
+                </div>
+
+                <div class="nh-activity nh-reveal nh-reveal-delay-2">
+                    <div class="nh-activity-img">
+                        <span class="nh-activity-time"><i class="fas fa-clock"></i> 07:30 - 14:00</span>
+                    </div>
+                    <div class="nh-activity-body">
+                        <h3>Sekolah Formal</h3>
+                        <p>Kegiatan belajar mengajar SMP & SMA dengan kurikulum nasional plus dan guru profesional.</p>
+                    </div>
+                </div>
+
+                <div class="nh-activity nh-reveal">
+                    <div class="nh-activity-img">
+                        <span class="nh-activity-time"><i class="fas fa-clock"></i> 15:30 - 17:30</span>
+                    </div>
+                    <div class="nh-activity-body">
+                        <h3>Pengajian Kitab Kuning</h3>
+                        <p>Kajian kitab klasik: Fathul Qorib, Taqrib, Ihya' Ulumiddin dengan metode bandongan & diskusi.</p>
+                    </div>
+                </div>
+
+                <div class="nh-activity nh-reveal nh-reveal-delay-1">
+                    <div class="nh-activity-img">
+                        <span class="nh-activity-time"><i class="fas fa-clock"></i> 16:00 - 17:30</span>
+                    </div>
+                    <div class="nh-activity-body">
+                        <h3>Olahraga & Ekstrakurikuler</h3>
+                        <p>Pramuka, pencak silat, panahan, sepak bola, kaligrafi, dan english/arabic club.</p>
+                    </div>
+                </div>
+
+                <div class="nh-activity nh-reveal nh-reveal-delay-2">
+                    <div class="nh-activity-img">
+                        <span class="nh-activity-time"><i class="fas fa-clock"></i> 20:00 - 21:30</span>
+                    </div>
+                    <div class="nh-activity-body">
+                        <h3>Belajar Malam & Muhadharah</h3>
+                        <p>Musyawarah pelajaran, latihan pidato 3 bahasa, dan persiapan ujian di bawah bimbingan ustadz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== USTADZ ===== -->
+    <section class="nh-section nh-ustadz" id="ustadz">
+        <div class="container">
+            <div class="nh-ustadz-header nh-reveal">
+                <div class="nh-section-tag center">Pengasuh & Ustadz</div>
+                <h2 class="nh-section-title">Dibimbing oleh <em>Para Ulama</em><br>& Pendidik Berpengalaman</h2>
+                <p class="nh-section-desc" style="margin: 0 auto;">
+                    85+ ustadz dan ustadzah lulusan Timur Tengah, LIPIA, dan PTN terbaik yang siap membimbing santri dengan penuh kasih sayang.
+                </p>
+            </div>
+
+            <div class="nh-ustadz-grid">
+                <div class="nh-ustadz-card nh-reveal">
+                    <div class="nh-ustadz-img"></div>
+                    <div class="nh-ustadz-body">
+                        <h3>KH. Dr. Ahmad Fauzi, MA</h3>
+                        <div class="role">Pengasuh Pondok</div>
+                        <p>Alumni Universitas Madinah. 30+ tahun mengabdi di pesantren.</p>
+                        <div class="arab">حفظه الله</div>
+                    </div>
+                </div>
+
+                <div class="nh-ustadz-card nh-reveal nh-reveal-delay-1">
+                    <div class="nh-ustadz-img"></div>
+                    <div class="nh-ustadz-body">
+                        <h3>Ust. Dr. Muhammad Idris, Lc</h3>
+                        <div class="role">Mudir Pendidikan</div>
+                        <p>Alumni Al-Azhar Mesir. Pakar tafsir & hadis kontemporer.</p>
+                        <div class="arab">حفظه الله</div>
+                    </div>
+                </div>
+
+                <div class="nh-ustadz-card nh-reveal nh-reveal-delay-2">
+                    <div class="nh-ustadz-img"></div>
+                    <div class="nh-ustadz-body">
+                        <h3>Ustdzh. Dr. Aisyah Rahma</h3>
+                        <div class="role">Kepala Putri</div>
+                        <p>Alumni LIPIA. Penghafal 30 juz & pakar fiqih wanita.</p>
+                        <div class="arab">حفظها الله</div>
+                    </div>
+                </div>
+
+                <div class="nh-ustadz-card nh-reveal nh-reveal-delay-3">
+                    <div class="nh-ustadz-img"></div>
+                    <div class="nh-ustadz-body">
+                        <h3>Ust. Hasan Al-Banna, M.Pd</h3>
+                        <div class="role">Koordinator Tahfidz</div>
+                        <p>Hafidz 30 juz bersanad. Pembina tahfidz berpengalaman.</p>
+                        <div class="arab">حفظه الله</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PPDB ===== -->
+    <section class="nh-section nh-ppdb" id="ppdb">
+        <div class="container">
+            <div class="nh-ppdb-grid">
+                <div class="nh-ppdb-info nh-reveal">
+                    <div class="nh-section-tag">PPDB 2026/2027</div>
+                    <h2 class="nh-section-title">
+                        Pendaftaran <em>Santri Baru</em><br>
+                        Telah Dibuka!
+                    </h2>
+                    <p class="nh-section-desc">
+                        Bergabunglah bersama 1.500+ santri di Pondok Pesantren Nurul Hikmah. Pendaftaran online dibuka untuk Tahun Ajaran 2026/2027 — jalur reguler & prestasi tahfidz.
+                    </p>
+
+                    <div class="nh-ppdb-features">
+                        <div class="nh-ppdb-feature">
+                            <div class="icon"><i class="fas fa-calendar-check"></i></div>
+                            <div>
+                                <h4>Gelombang 1: 1 Jan - 31 Mar</h4>
+                                <p>Pendaftaran awal dengan diskon administrasi 20%</p>
+                            </div>
+                        </div>
+                        <div class="nh-ppdb-feature">
+                            <div class="icon"><i class="fas fa-award"></i></div>
+                            <div>
+                                <h4>Beasiswa Tahfidz</h4>
+                                <p>Gratis SPP 100% untuk hafidz 15+ juz (putra/putri)</p>
+                            </div>
+                        </div>
+                        <div class="nh-ppdb-feature">
+                            <div class="icon"><i class="fas fa-file-alt"></i></div>
+                            <div>
+                                <h4>Seleksi Online & Offline</h4>
+                                <p>Tes baca Quran, akademik, dan wawancara wali</p>
+                            </div>
+                        </div>
+                        <div class="nh-ppdb-feature">
+                            <div class="icon"><i class="fas fa-users"></i></div>
+                            <div>
+                                <h4>Kuota Terbatas</h4>
+                                <p>Hanya menerima 300 santri baru (putra 150, putri 150)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="nh-btn nh-btn-ghost">
+                        <i class="fas fa-phone"></i> Hubungi Panitia PPDB
+                    </a>
+                </div>
+
+                <form class="nh-ppdb-form nh-reveal" id="nhPpdbForm" onsubmit="return handlePpdb(event)">
+                    <h3>Formulir Pendaftaran Online</h3>
+                    <p>Isi data berikut, tim PPDB akan menghubungi Anda dalam 1x24 jam.</p>
+
+                    <div class="nh-form-row">
+                        <div class="nh-form-field">
+                            <label>Nama Calon Santri *</label>
+                            <input type="text" id="pName" placeholder="Nama lengkap" required>
+                        </div>
+                        <div class="nh-form-field">
+                            <label>Tempat Lahir *</label>
+                            <input type="text" id="pBirth" placeholder="Kota kelahiran" required>
+                        </div>
+                    </div>
+
+                    <div class="nh-form-row">
+                        <div class="nh-form-field">
+                            <label>Tanggal Lahir *</label>
+                            <input type="date" id="pDob" required>
+                        </div>
+                        <div class="nh-form-field">
+                            <label>Jenis Kelamin *</label>
+                            <select id="pGender" required>
+                                <option value="">Pilih...</option>
+                                <option>Laki-laki</option>
+                                <option>Perempuan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="nh-form-row">
+                        <div class="nh-form-field">
+                            <label>Nama Wali *</label>
+                            <input type="text" id="pParent" placeholder="Nama ayah/ibu" required>
+                        </div>
+                        <div class="nh-form-field">
+                            <label>No. WhatsApp *</label>
+                            <input type="tel" id="pPhone" placeholder="08xxxxxxxxxx" required>
+                        </div>
+                    </div>
+
+                    <div class="nh-form-row">
+                        <div class="nh-form-field">
+                            <label>Jenjang *</label>
+                            <select id="pLevel" required>
+                                <option value="">Pilih jenjang...</option>
+                                <option>SMP Islam Terpadu</option>
+                                <option>SMA Islam Terpadu</option>
+                                <option>Program Tahfidz Intensif</option>
+                                <option>Madrasah Diniyah</option>
+                            </select>
+                        </div>
+                        <div class="nh-form-field">
+                            <label>Gelombang *</label>
+                            <select id="pWave" required>
+                                <option value="">Pilih gelombang...</option>
+                                <option>Gelombang 1 (Jan-Mar)</option>
+                                <option>Gelombang 2 (Apr-Jun)</option>
+                                <option>Gelombang 3 (Jul-Ags)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="nh-form-field">
+                        <label>Alamat Lengkap *</label>
+                        <textarea id="pAddress" placeholder="Jalan, RT/RW, Kelurahan, Kecamatan, Kota, Provinsi" required></textarea>
+                    </div>
+
+                    <button type="submit" class="nh-btn nh-btn-gold">
+                        <i class="fab fa-whatsapp"></i> Kirim via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEWS ===== -->
+    <section class="nh-section nh-news" id="news">
+        <div class="container">
+            <div class="nh-news-header">
+                <div class="nh-reveal">
+                    <div class="nh-section-tag">Berita & Artikel</div>
+                    <h2 class="nh-section-title">Kabar <em>Pesantren</em></h2>
+                    <p class="nh-section-desc">Informasi terbaru, kegiatan, dan artikel Islami dari Pondok Pesantren Nurul Hikmah.</p>
+                </div>
+                <a href="#news" class="nh-btn nh-btn-outline nh-reveal">Lihat Semua <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="nh-news-grid">
+                <article class="nh-news-card featured nh-reveal">
+                    <div class="nh-news-img">
+                        <span class="nh-news-category">Prestasi</span>
+                    </div>
+                    <div class="nh-news-body">
+                        <div class="nh-news-meta">
+                            <span><i class="far fa-calendar"></i> 20 Jun 2026</span>
+                            <span><i class="far fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h3>Santri Nurul Hikmah Juara 1 MTQ Nasional 2026 di Kategori Tilawah Dewasa</h3>
+                        <p>Muhammad Fauzan (17 tahun), santri kelas XII, berhasil meraih juara pertama dalam MTQ Nasional ke-32 di Banjarmasin, mengalahkan 34 peserta dari berbagai provinsi...</p>
+                        <a href="#" class="nh-news-link">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="nh-news-card nh-reveal nh-reveal-delay-1">
+                    <div class="nh-news-img">
+                        <span class="nh-news-category">Kegiatan</span>
+                    </div>
+                    <div class="nh-news-body">
+                        <div class="nh-news-meta">
+                            <span><i class="far fa-calendar"></i> 15 Jun 2026</span>
+                        </div>
+                        <h3>Wisuda Akbar 150 Hafidz 30 Juz</h3>
+                        <p>Acara wisuda tahunan dihadiri oleh ulama nasional dan keluarga besar santri.</p>
+                        <a href="#" class="nh-news-link">Baca <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="nh-news-card nh-reveal nh-reveal-delay-2">
+                    <div class="nh-news-img">
+                        <span class="nh-news-category">Kajian</span>
+                    </div>
+                    <div class="nh-news-body">
+                        <div class="nh-news-meta">
+                            <span><i class="far fa-calendar"></i> 8 Jun 2026</span>
+                        </div>
+                        <h3>Kajian Kitab Ihya' Ulumiddin Bersama KH. Ahmad Fauzi</h3>
+                        <p>Kajian rutin mingguan yang dihadiri ribuan jamaah dari berbagai daerah.</p>
+                        <a href="#" class="nh-news-link">Baca <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="nh-section nh-testimonials" id="testimonials">
+        <div class="container">
+            <div class="nh-testimonials-header nh-reveal">
+                <div class="nh-section-tag center">Testimoni</div>
+                <h2 class="nh-section-title">Kata <em>Mereka</em> tentang<br>Nurul Hikmah</h2>
+                <p class="nh-section-desc" style="margin: 0 auto;">
+                    Cerita dari alumni, wali santri, dan masyarakat tentang pengalaman bersama Pondok Pesantren Nurul Hikmah.
+                </p>
+            </div>
+
+            <div class="nh-testimonials-grid">
+                <div class="nh-testimonial nh-reveal">
+                    <div class="quote-mark">"</div>
+                    <div class="stars">★★★★★</div>
+                    <p class="text">Alhamdulillah, anak saya yang dulu sulit diatur, sekarang jadi hafidz 15 juz dan akhlaknya berubah 180 derajat. Pesantren ini benar-benar tempat terbaik untuk membentuk generasi rabbani.</p>
+                    <div class="nh-testimonial-foot">
+                        <div class="nh-testimonial-avatar"></div>
+                        <div>
+                            <h4>Bapak H. Surya Dharma</h4>
+                            <p>Wali Santri · Jakarta</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nh-testimonial nh-reveal nh-reveal-delay-1">
+                    <div class="quote-mark">"</div>
+                    <div class="stars">★★★★★</div>
+                    <p class="text">Saya alumni 2015, sekarang melanjutkan studi S2 di Universitas Al-Azhar Mesir. Ilmu agama dan bahasa Arab yang saya dapat di Nurul Hikmah menjadi fondasi kuat untuk karir akademis saya.</p>
+                    <div class="nh-testimonial-foot">
+                        <div class="nh-testimonial-avatar"></div>
+                        <div>
+                            <h4>Fatimah Azzahra, MA</h4>
+                            <p>Alumni 2015 · Mahasiswa S2 Al-Azhar</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nh-testimonial nh-reveal nh-reveal-delay-2">
+                    <div class="quote-mark">"</div>
+                    <div class="stars">★★★★★</div>
+                    <p class="text">Kombinasi pendidikan agama dan formalnya luar biasa. Anak saya tidak hanya hafal Quran tapi juga diterima di ITB melalui jalur prestasi. Pesantren modern terbaik yang saya tahu.</p>
+                    <div class="nh-testimonial-foot">
+                        <div class="nh-testimonial-avatar"></div>
+                        <div>
+                            <h4>Ibu dr. Ratna Sari</h4>
+                            <p>Wali Santri · Surabaya</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="nh-section nh-contact" id="contact">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;" class="nh-reveal">
+                <div class="nh-section-tag center">Kontak & Lokasi</div>
+                <h2 class="nh-section-title">Hubungi <em>Kami</em></h2>
+                <p class="nh-section-desc" style="margin: 0 auto;">
+                    Kami siap melayani pertanyaan Anda tentang program, pendaftaran, dan kunjungan ke pesantren.
+                </p>
+            </div>
+
+            <div class="nh-contact-grid">
+                <div class="nh-contact-map nh-reveal">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.004!2d110.8!3d-7.57!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMzQnMTIuMCJTIDExMMKwNDgnMDAuMCJF!5e0!3m2!1sid!2sid!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+                <div class="nh-contact-info nh-reveal">
+                    <div class="nh-contact-card">
+                        <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4>Alamat Pondok</h4>
+                            <p>Jl. KH. Abdullah Syafi'i No. 1<br>Desa Hikmah, Kec. Laweyan<br>Solo, Jawa Tengah 57148</p>
+                        </div>
+                    </div>
+
+                    <div class="nh-contact-card">
+                        <div class="icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <h4>Telepon & WhatsApp</h4>
+                            <p>
+                                Kantor: <a href="tel:+62271123456">(0271) 123-456</a><br>
+                                PPDB: <a href="https://wa.me/6281234567890">+62 812 3456 7890</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="nh-contact-card">
+                        <div class="icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>
+                                Umum: <a href="mailto:info@ppnh.sch.id">info@ppnh.sch.id</a><br>
+                                PPDB: <a href="mailto:ppdb@ppnh.sch.id">ppdb@ppnh.sch.id</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="nh-contact-card">
+                        <div class="icon"><i class="far fa-clock"></i></div>
+                        <div>
+                            <h4>Jam Kunjungan</h4>
+                            <p>
+                                Senin - Jumat: 08:00 - 16:00<br>
+                                Sabtu: 08:00 - 12:00<br>
+                                Minggu: By appointment
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section class="nh-newsletter">
+        <div class="nh-newsletter-inner">
+            <h2>Dapatkan <em>Kabar Terbaru</em><br>dari Pondok Pesantren</h2>
+            <p>Subscribe newsletter kami untuk mendapatkan info PPDB, kajian online, dan artikel Islami langsung ke email Anda.</p>
+            <form class="nh-newsletter-form" onsubmit="return handleNewsletter(event)">
+                <input type="email" placeholder="Email Anda..." required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="nh-footer">
+        <div class="nh-footer-grid">
+            <div class="nh-footer-brand">
+                <a href="#home" class="nh-logo">
+                    <div class="nh-logo-mark"><i class="fas fa-mosque"></i></div>
+                    <div class="nh-logo-text">
+                        <h1>Nurul Hikmah</h1>
+                        <p>Pondok Pesantren</p>
+                    </div>
+                </a>
+                <p>Lembaga pendidikan Islam terpadu yang mencetak generasi Qurani berakhlak mulia, berilmu luas, dan siap menjadi pemimpin umat sejak 1985.</p>
+                <div class="nh-footer-socials">
+                    <a href="#" class="nh-footer-social" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="nh-footer-social" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="nh-footer-social" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="nh-footer-social" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://wa.me/6281234567890" class="nh-footer-social" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="nh-footer-col">
+                <h4>Tautan Cepat</h4>
+                <ul>
+                    <li><a href="#home"><i class="fas fa-chevron-right"></i> Beranda</a></li>
+                    <li><a href="#about"><i class="fas fa-chevron-right"></i> Tentang Kami</a></li>
+                    <li><a href="#programs"><i class="fas fa-chevron-right"></i> Program</a></li>
+                    <li><a href="#facilities"><i class="fas fa-chevron-right"></i> Fasilitas</a></li>
+                    <li><a href="#activities"><i class="fas fa-chevron-right"></i> Kegiatan</a></li>
+                    <li><a href="#ustadz"><i class="fas fa-chevron-right"></i> Pengasuh</a></li>
+                </ul>
+            </div>
+
+            <div class="nh-footer-col">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="#ppdb"><i class="fas fa-chevron-right"></i> PPDB Online</a></li>
+                    <li><a href="#news"><i class="fas fa-chevron-right"></i> Berita & Artikel</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Alumni</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Donasi & Wakaf</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Kajian Online</a></li>
+                    <li><a href="#contact"><i class="fas fa-chevron-right"></i> Kontak</a></li>
+                </ul>
+            </div>
+
+            <div class="nh-footer-col">
+                <h4>Kontak</h4>
+                <div class="nh-footer-contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Jl. KH. Abdullah Syafi'i No. 1<br>Solo, Jawa Tengah 57148</span>
+                </div>
+                <div class="nh-footer-contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>(0271) 123-456</span>
+                </div>
+                <div class="nh-footer-contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>+62 812 3456 7890</span>
+                </div>
+                <div class="nh-footer-contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@ppnh.sch.id</span>
+                </div>
+
+                <div class="nh-footer-certif">
+                    <span class="nh-certif-badge"><i class="fas fa-certificate"></i> Akreditasi A</span>
+                    <span class="nh-certif-badge"><i class="fas fa-award"></i> ISO 9001</span>
+                    <span class="nh-certif-badge"><i class="fas fa-book-quran"></i> Rabithah</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="nh-footer-bottom">
+            <p>&copy; 2026 Pondok Pesantren Nurul Hikmah. All rights reserved. | <em>Barakallahu fiikum</em> 🤲</p>
+            <div class="nh-footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/6281234567890" class="nh-wa-float" target="_blank" aria-label="WhatsApp PPDB">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="#home" class="nh-back-top" id="nhBackTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+<script>
+// ===== NAVBAR SCROLL =====
+const nhNavbar = document.getElementById('nhNavbar');
+const nhBackTop = document.getElementById('nhBackTop');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        nhNavbar.classList.add('scrolled');
+        nhBackTop.classList.add('visible');
+    } else {
+        nhNavbar.classList.remove('scrolled');
+        nhBackTop.classList.remove('visible');
+    }
+});
+
+// ===== MOBILE MENU =====
+function toggleMobileMenu() {
+    document.getElementById('nhMobileMenu').classList.toggle('active');
+}
+
+// ===== REVEAL ANIMATION =====
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.nh-reveal').forEach(el => revealObserver.observe(el));
+
+// ===== ANIMATED COUNTER =====
+function animateCounter(el) {
+    const target = parseInt(el.getAttribute('data-count'));
+    const sup = el.querySelector('sup')?.textContent || '';
+    const duration = 2000;
+    const steps = 60;
+    const increment = target / steps;
+    let current = 0;
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+        el.innerHTML = Math.floor(current).toLocaleString('id-ID') + (sup ? `<sup>${sup}</sup>` : '');
+    }, duration / steps);
+}
+
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.dataset.counted) {
+            entry.target.dataset.counted = 'true';
+            animateCounter(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+
+// ===== SMOOTH SCROLL =====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const target = document.querySelector(targetId);
+        if (target) {
+            e.preventDefault();
+            window.scrollTo({
+                top: target.getBoundingClientRect().top + window.pageYOffset - 90,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// ===== PPDB FORM =====
+function handlePpdb(e) {
+    e.preventDefault();
+    const name = document.getElementById('pName').value.trim();
+    const birth = document.getElementById('pBirth').value.trim();
+    const dob = document.getElementById('pDob').value;
+    const gender = document.getElementById('pGender').value;
+    const parent = document.getElementById('pParent').value.trim();
+    const phone = document.getElementById('pPhone').value.trim();
+    const level = document.getElementById('pLevel').value;
+    const wave = document.getElementById('pWave').value;
+    const address = document.getElementById('pAddress').value.trim();
+
+    if (!name || !birth || !dob || !gender || !parent || !phone || !level || !wave || !address) {
+        alert('Mohon lengkapi semua field yang wajib diisi (*)');
+        return false;
+    }
+
+    const dateObj = new Date(dob);
+    const formattedDob = dateObj.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+
+    let msg = `🕌 *PENDAFTARAN SANTRI BARU*\n`;
+    msg += `*PONDOK PESANTREN NURUL HIKMAH*\n`;
+    msg += `━━━━━━━━━━━━━━━━━━\n\n`;
+    msg += `👤 *Nama Calon Santri:* ${name}\n`;
+    msg += `📍 *TTL:* ${birth}, ${formattedDob}\n`;
+    msg += `👫 *Jenis Kelamin:* ${gender}\n`;
+    msg += `👨‍👩‍👧 *Nama Wali:* ${parent}\n`;
+    msg += `📱 *WhatsApp:* ${phone}\n`;
+    msg += `🏫 *Jenjang:* ${level}\n`;
+    msg += `📅 *Gelombang:* ${wave}\n\n`;
+    msg += `🏠 *Alamat:*\n${address}\n\n`;
+    msg += `━━━━━━━━━━━━━━━━━━\n`;
+    msg += `_Assalamu'alaikum, mohon informasi selanjutnya._\n_Jazakumullahu khairan._`;
+
+    const waUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(msg)}`;
+    window.open(waUrl, '_blank');
+
+    alert('✅ Formulir pendaftaran Anda sedang diproses!\n\nAnda akan diarahkan ke WhatsApp Panitia PPDB. Tim kami akan menghubungi Anda dalam 1x24 jam.\n\nBarakallahu fiik!');
+    document.getElementById('nhPpdbForm').reset();
+    return false;
+}
+
+// ===== NEWSLETTER =====
+function handleNewsletter(e) {
+    e.preventDefault();
+    alert('✅ Jazakallahu khairan! Email Anda telah terdaftar.\n\nKabar terbaru dari Pondok Pesantren Nurul Hikmah akan kami kirimkan ke email Anda.');
+    e.target.reset();
+    return false;
+}
+</script>
+
+</body>
+</html>
